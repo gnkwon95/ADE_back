@@ -25,7 +25,7 @@ SECRET_KEY = '18^$f%td3caz+5n7!=iskg!+n65@h6)b7%j1fkil8*#y6fmz7+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['15.164.251.155']
+ALLOWED_HOSTS = ['15.164.251.155', 'adedata.com', 'www.adedata.com']
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
