@@ -26,7 +26,9 @@ class ProfileList extends Component {
             </tr>
           ) : (
             profiles.map(profile => (
+
               <tr key={profile.pk}>
+                <td>YAAAAAAAAAAAY</td>
                 <td>{profile.title}</td>
                 <td>{profile.author}</td>
                 <td align="center">

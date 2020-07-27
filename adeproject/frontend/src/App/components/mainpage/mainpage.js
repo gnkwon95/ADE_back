@@ -10,17 +10,17 @@ class Mainpage extends Component {
         profile: []
     }
 
-     componentDidMount() {
-    this.resetState();
-  }
-
-    getProfiles = () => {
-        axios.get('/api/profiles/').then(res => this.setState({ profiles: res.data }));
+    getProfiles = (pk) => {
+        axios.get('profiles/'+pk).then(res => this.setState({ profiles: res.data }));
       };
 
     resetState = () => {
        this.getProfiles();
-       };
+     };
+
+    componentDidMount() {
+        this.resetState();
+    }
 
     render() {
         return (

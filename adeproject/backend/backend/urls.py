@@ -1,29 +1,31 @@
 from django.contrib import admin
+from django.conf.urls import url
 from django.urls import path, include  # add this
 from rest_framework import routers  # add this
 from proj import views  # add this
 
-"""
-from rest_framework import routers
-
-router = routers.SimpleRouter()
-router.register(r'users', UserViewSet)
-router.register(r'accounts', AccountViewSet)
-urlpatterns = router.urls
-"""
-
-
-
-router = routers.DefaultRouter()  # add this
-router.register(r'profiles', views.ProfileListView, 'profile')  # add this
-#router.register(r'profiles/([0-9]+)$', views.ProfileView, 'profilelist')
-router.register(r'mypage', views.MypageView, 'mypage')
-router.register(r'^profiles/(?P<pk>[0-9]+)/$', views.PersonalProfileView, 'personalprofile')
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),  # add this
- #   path('api/mypage', include(router.urls), name='mypage'),
-  #  path('api/mypage', include(mypage.urls), name=',mypage'),
+    url(r'^', include('proj.urls')),
 ]
+
+
+
+
+"""
+from django.conf.urls import include, url
+from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
+
+API_TITLE = 'Pastebin API'
+API_DESCRIPTION = 'A Web API for creating and viewing highlighted code snippets.'
+schema_view = get_schema_view(title=API_TITLE)
+
+urlpatterns = [
+    url(r'^', include('snippets.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^schema/$', schema_view),
+    url(r'^docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION))
+]
+"""

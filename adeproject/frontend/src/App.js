@@ -1,23 +1,31 @@
 import React, { Component, Fragment } from 'react';
 import Mainpage from "./App/components/mainpage/mainpage";
 import Header from "./App/components/header/header";
+import MyPage from "./App/components/mypage/mypagemain";
+import {NavLink, Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 // import './App.css';
+
+
 
 
 class App extends Component {
     render() {
         return (
-            <Fragment>
+            <Router>
                 <Header />
-                <Mainpage />
-            </Fragment>
+                <div>
+                    <Route exact path="/" component={Mainpage} />
+                    <Route path="/profiles" component={ Mainpage } />
+                    <Route path="/mypage/:pk" component={ MyPage } />
+                </div>
+            </Router>
         )
     }
 }
 
 
-
-/* - to jump around paths
+//  <li><NavLink exact activeClassName="current" to='/profiles'>메인페이지</NavLink></li>
+/*
 const Main = () => (
     <Switch>
         <Route exact path='/profiles' component = {Mainpage}></Route>
