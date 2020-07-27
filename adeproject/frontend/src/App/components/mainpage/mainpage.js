@@ -10,8 +10,8 @@ class Mainpage extends Component {
         profile: []
     }
 
-    getProfiles = (pk) => {
-        axios.get('profiles/'+pk).then(res => this.setState({ profiles: res.data }));
+    getProfiles = () => {
+        axios.get('profiles').then(res => this.setState({ profiles: res.data }));
       };
 
     resetState = () => {

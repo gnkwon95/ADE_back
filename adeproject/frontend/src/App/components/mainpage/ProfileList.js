@@ -28,9 +28,8 @@ class ProfileList extends Component {
             profiles.map(profile => (
 
               <tr key={profile.pk}>
-                <td>YAAAAAAAAAAAY</td>
                 <td>{profile.title}</td>
-                <td>{profile.author}</td>
+                <td>{profile.user_id}</td>
                 <td align="center">
                 </td>
               </tr>

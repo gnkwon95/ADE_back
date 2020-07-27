@@ -2,74 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="904d8183-82a3-48fe-8b87-16779dbc741d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proj/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proj/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proj/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proj/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proj/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proj/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/proj/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/proj/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App/components/header/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App/components/mainpage/mainpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App/components/mainpage/mainpage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/common/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/hr/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/hr/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/hr/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/hr/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/hr/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0002_profile_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0003_profile_user_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0004_comment_user_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0005_auto_20200721_1958.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0006_repl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0007_delete_repl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/0008_auto_20200722_1734.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/templatetags/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/templatetags/mentor_filter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/views/base_views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/views/comment_views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/views/profile_views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/mentor/views/vote_views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/static/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/static/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/static/jquery-3.5.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/common/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/common/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/form_errors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/mentor/comment_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/mentor/profile_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/mentor/profile_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/mentor/profile_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/mentor/repl_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hr/templates/navbar.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/proj/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="209">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -104,46 +42,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js">
+        <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="266">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/App/components/header/header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/mainpage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="117">
               <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+        <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="418">
+              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -151,17 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/App/components/header/header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+            <state relative-caret-position="450">
+              <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -191,6 +111,7 @@
     <findStrings>
       <find>auth_user</find>
       <find>proxy</find>
+      <find>link</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -228,14 +149,14 @@
         <option value="$PROJECT_DIR$/backend/proj/serializers.py" />
         <option value="$PROJECT_DIR$/backend/proj/views.py" />
         <option value="$PROJECT_DIR$/backend/proj/admin.py" />
-        <option value="$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js" />
-        <option value="$PROJECT_DIR$/frontend/src/index.js" />
-        <option value="$PROJECT_DIR$/frontend/src/App/components/header/header.js" />
         <option value="$PROJECT_DIR$/frontend/src/index.css" />
         <option value="$PROJECT_DIR$/backend/proj/urls.py" />
         <option value="$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/src/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/App/components/mainpage/mainpage.js" />
+        <option value="$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js" />
+        <option value="$PROJECT_DIR$/frontend/src/App/components/header/header.js" />
       </list>
     </option>
   </component>
@@ -284,15 +205,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adeproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adeproject" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adeproject" type="b2602c69:ProjectViewProjectNode" />
@@ -464,24 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/index.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/header/header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+        <state relative-caret-position="1045">
+          <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -492,34 +390,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/proj/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="209">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mypage/mypagemain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/mainpage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="117">
           <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/mainpage/ProfileList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App/components/header/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
         </state>
       </provider>
     </entry>
