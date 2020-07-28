@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.conf.urls import url
-from django.urls import path, include  # add this
-from rest_framework import routers  # add this
+from django.urls import path, include
+from rest_framework import routers
 from proj import views  # add this
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^', include('proj.urls')),
 ]
 

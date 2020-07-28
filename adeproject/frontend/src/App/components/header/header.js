@@ -12,7 +12,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 
 
 class Header extends Component {
-    render(){
+    render() {
         return(
         <div>
             <Navbar bg="light" expand="lg">
@@ -22,6 +22,11 @@ class Header extends Component {
                 <Nav className="mr-auto">
                   <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="/mypage/1">마이페이지</Nav.Link>
+                  {
+                    this.props.isAuthenticated?
+                    <Nav.Link href="/"> Logout</Nav.Link> :
+                    <Nav.Link href="/Login">Login</Nav.Link>
+                  }
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -41,23 +46,5 @@ class Header extends Component {
     }
 }
 
-/*
-class Header extends Component {
-    render(){
-        return(
-
-            <nav>
-                <ul>
-                    <li><NavLink exact activeClassName="current" to='/profiles'>메인페이지</NavLink></li>
-                    <li><NavLink exact activeClassName="current" to='/mypage'>마이페이지</NavLink></li>
-                    <li><NavLink exact activeClassName="current" to='/Login'>로그인</NavLink></li>
-                    <li><NavLink exact activeClassName="current" to='/Register'>회원등록</NavLink></li>
-                    <li><NavLink exact activeClassName="current" to='/RegisterMentor'>멘토등록하기</NavLink></li>
-                </ul>
-            </nav>
-            );
-    }
-}
-*/
 
 export default Header;
