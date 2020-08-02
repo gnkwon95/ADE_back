@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-#from django.contrib.postgres.fields import ArrayField
-from django_mysql.models import ListCharField
 from django.utils import timezone
 
 class PersonalProfile(models.Model):
