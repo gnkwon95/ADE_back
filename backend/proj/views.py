@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
-from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, CertificateSerializer, ExtracurricularSerializer, AppliedCompaniesSerializer
+from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, AppliedCompaniesSerializer
 from .models import MentorProfile, PersonalProfile, Comment, Score, Connections, MentorProfileCertificates, MentorProfileExtracurricular, MentorProfileWorkExperience, MentorProfileAppliedCompanies
 from rest_framework_tracking.mixins import LoggingMixin
 
@@ -54,7 +54,7 @@ class CertificateViewSet(viewsets.ModelViewSet):
 """
 
 class ExtracurricularViewSet(viewsets.ModelViewSet):
-    serializer_class = CertificateSerializer
+    serializer_class = ExtracurricularSerializer
   #  queryset = MentorProfileExtracurricular.objects.all()
 
     def get_queryset(self):
@@ -65,7 +65,7 @@ class ExtracurricularViewSet(viewsets.ModelViewSet):
         return queryset
 
 class WorkExperienceViewSet(viewsets.ModelViewSet):
-    serializer_class = CertificateSerializer
+    serializer_class = WorkExperienceSerializer
 
     def get_queryset(self):
         queryset = MentorProfileWorkExperience.objects.all()
@@ -75,7 +75,7 @@ class WorkExperienceViewSet(viewsets.ModelViewSet):
         return queryset
 
 class AppliedCompaniesViewSet(viewsets.ModelViewSet):
-    serializer_class = CertificateSerializer
+    serializer_class = AppliedCompaniesSerializer
     queryset = MentorProfileAppliedCompanies.objects.all()
 
     def get_queryset(self):
