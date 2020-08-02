@@ -24,6 +24,16 @@ class ConnectionsViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class=ConnectionsSerializer
     queryset = Connections.objects.all()
 
+    def get_queryset(self):
+        queryset = Connections.objects.all()
+        mentor = self.request.query_params.get('mentor', None)
+        mentee = self.request.query_params.get('mentee', None)
+        if mentor is not None:
+            queryset = queryset.filter(mentor = mentor)
+        if mentee is not None:
+            queryset = queryset.filter(mentee = mentee)
+        return queryset
+
 
 
 # Mentor Profile related
