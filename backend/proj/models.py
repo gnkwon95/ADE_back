@@ -90,7 +90,7 @@ class Comment(models.Model):
     date_modified = models.DateTimeField(null=True, blank=True)
     content = models.TextField()
     create_date = models.DateTimeField()
-    voter = models.ManyToManyField(User, null=True, related_name='voter_comment')
+    voter = models.ManyToManyField(User, blank=True, related_name='voter_comment')
 
 class Score(models.Model):
     granted_by = models.ForeignKey(User, default=0, on_delete=models.PROTECT)
