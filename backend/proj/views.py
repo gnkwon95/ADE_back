@@ -14,7 +14,13 @@ class PersonalViewSet(LoggingMixin, viewsets.ModelViewSet):
 
 class CommentViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.all()
+
+    def get_queryset(self):
+        queryset = Comment.objects.all()
+        profile = self.request.query_params.get('profile', None)
+        if profile is not None:
+            queryset = queryset.filter(profile = profile)
+        return queryset
 
 class ScoreViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
