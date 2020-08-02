@@ -8,7 +8,7 @@ router.register(r'profiles', views.MentorProfilesViewSet) #for front page, get a
     #for detail page, access profiles/<mentor_number>
 router.register(r'mypage', views.PersonalViewSet) #will query into mypage/<my_number> (although shown as /mypage/)
 router.register(r'comments', views.CommentViewSet) # will not display on url
-router.register(r'scores', views.ScoreViewSet) #will not display on url
+router.register(r'scores', views.ScoreViewSet, basename='scores') #will not display on url
 router.register(r'connections', views.ConnectionsViewSet, basename='connections') #get all connections, and query queries related to myself
 
 #used to get mentor profiles, get input

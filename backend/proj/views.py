@@ -18,11 +18,18 @@ class CommentViewSet(LoggingMixin, viewsets.ModelViewSet):
 
 class ScoreViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
-    queryset = Score.objects.all()
+
+    def get_queryset(self):
+        queryset = Score.objects.all()
+        granted_to = self.request.query_params.get('granted_to', None)
+        if granted_to is not None:
+            queryset = queryset.filter(granted_to = granted_to)
+        return queryset
+
 
 class ConnectionsViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class=ConnectionsSerializer
-    queryset = Connections.objects.all()
+  #  queryset = Connections.objects.all()
 
     def get_queryset(self):
         queryset = Connections.objects.all()
