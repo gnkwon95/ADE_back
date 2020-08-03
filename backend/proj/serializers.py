@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import MentorProfile, PersonalProfile, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates, MentorProfileExtracurricular, MentorProfileWorkExperience
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates, MentorProfileExtracurricular, MentorProfileWorkExperience
 
 
 
 class PersonalSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PersonalProfile
-        fields = ('user_id', 'email', 'user_name', 'user_pw', 'credit', 'credit_used')
+        model = User
+        fields = ('user_uid', 'email', 'user_id', 'credit', 'credit_used')
 
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,7 +36,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MentorProfile
-        fields = ('user_name', 'user_id', 'current_company', 'current_job',
+        fields = ('user', 'current_company', 'current_job',
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
