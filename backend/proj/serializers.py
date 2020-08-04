@@ -7,6 +7,7 @@ class PersonalSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('user_uid', 'email', 'user_id', 'credit', 'credit_used')
+        read_only_fields = ('credit', 'credit_used')
 
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
