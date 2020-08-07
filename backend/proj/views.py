@@ -41,10 +41,13 @@ class ConnectionsViewSet(LoggingMixin, viewsets.ModelViewSet):
         queryset = Connections.objects.all()
         mentor = self.request.query_params.get('mentor', None)
         mentee = self.request.query_params.get('mentee', None)
+        user = self.request.query_params.get('user', None)
         if mentor is not None:
             queryset = queryset.filter(mentor = mentor)
         if mentee is not None:
             queryset = queryset.filter(mentee = mentee)
+        if user is not None:
+            queryset = queryset.filter(mentor__user_uid = user) #or mentee. filter on two fields.
         return queryset
 
 
