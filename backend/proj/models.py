@@ -45,7 +45,7 @@ class MentorProfile(models.Model):
     date_modified = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return str(self.user.user_uid)
+        return str(self.user.user_id)
 
 class MentorProfileCertificates(models.Model):
     profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)

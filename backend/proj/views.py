@@ -47,9 +47,9 @@ class ConnectionsViewSet(LoggingMixin, viewsets.ModelViewSet):
         if mentee is not None:
             queryset = queryset.filter(mentee = mentee)
         if user is not None:
-            queryset1 = queryset.filter(mentor__user__user_uid = user) #or mentee. filter on two fields.
+          #  queryset1 = queryset.filter(mentor__user__user_uid = user) #or mentee. filter on two fields.
             queryset2 = queryset.filter(mentee__user_uid = user)
-            return queryset1 | queryset2
+            return queryset2
         return queryset
 
 
