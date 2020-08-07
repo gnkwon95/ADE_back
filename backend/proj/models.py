@@ -96,5 +96,5 @@ class Score(models.Model):
 class Connections(models.Model):
     mentor = models.ForeignKey(MentorProfile, on_delete=models.PROTECT, related_name='connection_mentor')
     mentee = models.ForeignKey(User, on_delete=models.PROTECT, related_name='connection_mentee')
-    registered_at = models.DateTimeField( default=timezone.now)
+    registered_date = models.DateTimeField( default=timezone.now)
     meeting_date = models.DateField()
