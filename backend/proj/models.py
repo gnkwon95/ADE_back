@@ -9,7 +9,7 @@ class User(models.Model):
     credit_used = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
-        return self.email
+        return self.user_id
 
 class MentorProfile(models.Model):
     # mentor profile
@@ -45,7 +45,7 @@ class MentorProfile(models.Model):
     date_modified = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return str(self.user_id)
+        return str(self.user.user_uid)
 
 class MentorProfileCertificates(models.Model):
     profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)
@@ -98,3 +98,6 @@ class Connections(models.Model):
     mentee = models.ForeignKey(User, on_delete=models.PROTECT, related_name='connection_mentee')
     registered_date = models.DateTimeField( default=timezone.now)
     meeting_date = models.DateField()
+
+    def __str__(self):
+        return str(self.mentor.user.user_id, "+", self.mentee.user_id)
