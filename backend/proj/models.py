@@ -100,4 +100,4 @@ class Connections(models.Model):
     meeting_date = models.DateField()
 
     def __str__(self):
-        return str(self.mentor.user.user_id, "+", self.mentee.user_id)
+        return str(self.mentor.user.user_id + "+" + self.mentee.user_id)
