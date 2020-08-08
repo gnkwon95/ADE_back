@@ -57,10 +57,12 @@ class ScoreSerializer(serializers.ModelSerializer):
 class ConnectionsSerializer(serializers.ModelSerializer):
     mentor_uid = serializers.ReadOnlyField(source='mentor.user.user_uid')
     mentee_uid = serializers.ReadOnlyField(source='mentee.user_uid')
+    mentor_id = serializers.ReadOnlyField(source='mentor.user.user_id')
+    mentee_id = serializers.ReadOnlyField(source='mentee.user_id')
 
     class Meta:
         model = Connections
-        fields = ('mentor', 'mentee', 'registered_date', 'meeting_date', 'mentor_uid', 'mentee_uid')
+        fields = ('mentor', 'mentee', 'registered_date', 'meeting_date', 'mentor_uid', 'mentee_uid', 'mentor_id', 'mentee_id')
 
 
 
