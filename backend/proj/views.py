@@ -8,9 +8,16 @@ class MentorProfilesViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = MentorProfileSerializer
     queryset = MentorProfile.objects.all()
 
+
 class PersonalViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = PersonalSerializer
-    queryset = User.objects.all()
+
+    def get_queryset(self):
+        queryset = User.objects.all()
+        user = self.request.query_params.get('user', None)
+        if user is not None:
+            queryset = queryset.filter(user_uid = user)
+        return queryset
 
 class CommentViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = CommentSerializer
