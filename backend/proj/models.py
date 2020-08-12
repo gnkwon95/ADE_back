@@ -7,6 +7,7 @@ class User(models.Model):
     user_id = models.CharField(max_length=20) #input as username from django
     credit = models.PositiveSmallIntegerField(default=0)
     credit_used = models.PositiveSmallIntegerField(default=0)
+    is_mentor = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user_id
