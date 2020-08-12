@@ -48,28 +48,28 @@ class MentorProfile(models.Model):
         return str(self.user.user_id)
 
 class MentorProfileCertificates(models.Model):
-    profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='Certificates', on_delete=models.CASCADE)
     certificate = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.profile.user_id)
 
 class MentorProfileExtracurricular(models.Model):
-    profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='Extracurricular', on_delete=models.CASCADE)
     extracurricular = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.profile.user_id)
 
 class MentorProfileWorkExperience(models.Model):
-    profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='WorkExperience', on_delete=models.CASCADE)
     workexperience = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.profile.user_id)
 
 class MentorProfileAppliedCompanies(models.Model):
-    profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='AppliedCompanies', on_delete=models.CASCADE)
     appliedcompany = models.CharField(max_length=20)
     appliedcompanystage = models.CharField(max_length=20, default='최종합')
 

@@ -12,22 +12,22 @@ class PersonalSerializer(serializers.ModelSerializer):
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileCertificates
-        fields = ('profile', 'certificate')
+        fields = ['certificate']
 
 class ExtracurricularSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileExtracurricular
-        fields = ('profile', 'extracurricular')
+        fields = [ 'extracurricular']
 
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileWorkExperience
-        fields = ('profile', 'workexperience')
+        fields = [ 'workexperience']
 
 class AppliedCompaniesSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileAppliedCompanies
-        fields = ('profile', 'appliedcompany', 'appliedcompanystage')
+        fields = ['appliedcompany', 'appliedcompanystage']
 
 class MentorProfileSerializer(serializers.ModelSerializer):
   #  certificates = CertificateSerializer(many=True, source='certificates_set')
@@ -37,11 +37,11 @@ class MentorProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MentorProfile
-        fields = ('user', 'current_company', 'current_job',
+        fields = ['user', 'current_company', 'current_job',
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified')
+                  'create_date', 'date_modified']
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -63,6 +63,20 @@ class ConnectionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Connections
         fields = ('mentor', 'mentee', 'registered_date', 'meeting_date', 'mentor_uid', 'mentee_uid', 'mentor_id', 'mentee_id')
+
+class MentorSerializer(serializers.ModelSerializer):
+    Certificate = CertificateSerializer(many=True, read_only=True)
+    Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
+    AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
+    WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = MentorProfile
+        fields = ['user', 'current_company', 'current_job',
+                  'work_period_from', 'work_period_to',
+                  'PR', 'voter', 'real_name',
+                  'phone_number', 'bank', 'account_num', 'account_email',
+                  'create_date', 'date_modified', 'Certificate', 'Extracurricular', 'AppliedCompanies', 'WorkExperience']
 
 
 

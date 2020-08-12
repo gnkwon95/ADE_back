@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
-from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, AppliedCompaniesSerializer
+from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, AppliedCompaniesSerializer, MentorSerializer
 from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates, MentorProfileExtracurricular, MentorProfileWorkExperience, MentorProfileAppliedCompanies
 from rest_framework_tracking.mixins import LoggingMixin
 
@@ -108,4 +108,14 @@ class AppliedCompaniesViewSet(viewsets.ModelViewSet):
         mentor = self.request.query_params.get('mentor', None)
         if mentor is not None:
             queryset = queryset.filter(profile=mentor)
+        return queryset
+
+class ProfileFullViewSet(viewsets.ModelViewSet):
+    serializer_class = MentorSerializer
+
+    def get_queryset(self):
+        queryset = MentorProfile.objects.all()
+        user = self.request.query_params.get('user', None)
+        if user is not None:
+            queryset = queryset.filter(user__user_uid=user)
         return queryset
