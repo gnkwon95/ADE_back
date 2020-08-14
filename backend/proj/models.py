@@ -87,16 +87,16 @@ class Comment(models.Model):
     voter = models.ManyToManyField(User, blank=True, related_name='voter_comment')
 
 class Score(models.Model):
-    granted_by = models.ForeignKey(User, default=0, on_delete=models.PROTECT)
-    granted_to = models.ForeignKey(MentorProfile, default=0, related_name="granted_to", on_delete=models.PROTECT)
+    granted_by = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
+    granted_to = models.ForeignKey(MentorProfile, default=0, related_name="granted_to", on_delete=models.CASCADE)
     score = models.PositiveSmallIntegerField(default=0)
     created_at = models.DateTimeField('date published', default=timezone.now)
 
 # Create your models here.
 
 class Connections(models.Model):
-    mentor = models.ForeignKey(MentorProfile, on_delete=models.PROTECT, related_name='connection_mentor')
-    mentee = models.ForeignKey(User, on_delete=models.PROTECT, related_name='connection_mentee')
+    mentor = models.ForeignKey(MentorProfile, on_delete=models.CASCADE, related_name='connection_mentor')
+    mentee = models.ForeignKey(User, on_delete=models.CASCADE, related_name='connection_mentee')
     registered_date = models.DateTimeField( default=timezone.now)
     meeting_date = models.DateField()
 

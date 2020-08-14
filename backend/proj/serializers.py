@@ -30,10 +30,8 @@ class AppliedCompaniesSerializer(serializers.ModelSerializer):
         fields = ['appliedcompany', 'appliedcompanystage']
 
 class MentorProfileSerializer(serializers.ModelSerializer):
-  #  certificates = CertificateSerializer(many=True, source='certificates_set')
-  #  extracurricular = ExtracurricularSerializer(many=True, source='extracurricular_set')
-  #  workexperience = WorkExperienceSerializer(many=True, source='workexperience_set')
-  #  appliedCompanies = AppliedCompaniesSerializer(many=True, source='appliedcompanies_set')
+    Profile= PersonalSerializer(many=True, read_only=True)
+
 
     class Meta:
         model = MentorProfile
@@ -41,7 +39,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified']
+                  'create_date', 'date_modified', 'profile']
 
 
 class CommentSerializer(serializers.ModelSerializer):
