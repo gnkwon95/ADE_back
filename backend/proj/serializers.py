@@ -39,7 +39,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified', 'profile']
+                  'create_date', 'date_modified', 'Profile']
 
 
 class CommentSerializer(serializers.ModelSerializer):
