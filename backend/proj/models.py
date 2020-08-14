@@ -14,7 +14,7 @@ class User(models.Model):
 
 class MentorProfile(models.Model):
     # mentor profile
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_id_mentor_profile')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mentor_profile_user')
 
     #company
     current_company = models.CharField(max_length=20)

@@ -6,7 +6,7 @@ from .models import MentorProfile, User, Comment, Score, Connections, MentorProf
 class PersonalSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('user_uid', 'email', 'user_id', 'credit', 'credit_used')
+        fields = ('user_uid', 'email', 'user_id', 'credit', 'credit_used', 'is_mentor')
         read_only_fields = ('credit', 'credit_used')
 
 class CertificateSerializer(serializers.ModelSerializer):
@@ -67,9 +67,12 @@ class MentorSerializer(serializers.ModelSerializer):
     Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
     AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
     WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
+  #  mentor_profile_user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='user.id')
+  #  mentor_profile_user = PersonalSerializer(source='user.id')
 
     class Meta:
         model = MentorProfile
+        depth=1
         fields = ['user', 'current_company', 'current_job',
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
