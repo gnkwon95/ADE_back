@@ -107,7 +107,7 @@ DATABASES = {
         'NAME': 'contag',
         'USER': 'kwon',
         'PASSWORD': 'teamade',
-        'HOST': '15.164.251.155:8000',
+        'HOST': '15.164.251.155',
         'PORT': '',
     }
 }
