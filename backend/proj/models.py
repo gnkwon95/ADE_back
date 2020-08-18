@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+#from imagekit.models import ProcessedImageField
+#from imagekit.processors import ResizeToFill
 
 class User(models.Model):
     user_uid = models.CharField(max_length=50) #input as user_uid from django
@@ -12,21 +14,22 @@ class User(models.Model):
     def __str__(self):
         return self.user_id
 
+def logo_image_path(instance, filename):
+    return f'posts/{instance.content}/{instance.content}.jpg'
+
 class MentorProfile(models.Model):
     # mentor profile
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mentor_profile_user')
+    nickname = models.CharField(max_length=20)
+    education = models.CharField(max_length=20)
+
 
     #company
     current_company = models.CharField(max_length=20)
+    logo = models.ImageField(upload_to='logo/', blank=True)
     current_job = models.CharField(max_length=20)
     work_period_from = models.DateField()
-    work_period_to = models.DateField(null=True, blank=True) #use front to write '현재' if datetime is null
-
-    #spec
-    #MentorProfileCertificates=models.ForeignKey(MentorProfileCertificates)
-    #MentorProfileExtracurricular
-    #MentorProfileWorkExperience
-    #MentorProfileAppliedCompanies
+    work_period_to = models.DateField()
 
     # self introduction
     PR = models.TextField()
@@ -45,19 +48,15 @@ class MentorProfile(models.Model):
     create_date = models.DateTimeField(default=timezone.now)
     date_modified = models.DateTimeField(null=True, blank=True)
 
+    # registered
+    is_confirmed = models.BooleanField(default=False)
+
     def __str__(self):
         return str(self.user.user_id)
 
 class MentorProfileCertificates(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='Certificates', on_delete=models.CASCADE)
     certificate = models.CharField(max_length=20)
-
-    def __str__(self):
-        return str(self.profile.user_id)
-
-class MentorProfileExtracurricular(models.Model):
-    profile = models.ForeignKey(MentorProfile, related_name='Extracurricular', on_delete=models.CASCADE)
-    extracurricular = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.profile.user_id)

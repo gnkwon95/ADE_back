@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.apps import apps
 
 # Register your models here.
-from .models import MentorProfile, User, Score, Comment, Connections, MentorProfileWorkExperience, MentorProfileExtracurricular, MentorProfileCertificates, MentorProfileAppliedCompanies
+from .models import MentorProfile, User, Score, Comment, Connections, MentorProfileWorkExperience, MentorProfileCertificates, MentorProfileAppliedCompanies
 
 class MentorProfileAdmin(admin.ModelAdmin):
     search_fields = ['title']
@@ -16,7 +16,6 @@ admin.site.register(Score)
 admin.site.register(Connections)
 
 admin.site.register(MentorProfileWorkExperience)
-admin.site.register(MentorProfileExtracurricular)
 admin.site.register(MentorProfileCertificates)
 admin.site.register(MentorProfileAppliedCompanies)
 admin.site.register(Comment)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates, MentorProfileExtracurricular, MentorProfileWorkExperience
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates,  MentorProfileWorkExperience
 
 
 
@@ -13,11 +13,6 @@ class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileCertificates
         fields = ['certificate']
-
-class ExtracurricularSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MentorProfileExtracurricular
-        fields = [ 'extracurricular']
 
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,7 +30,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MentorProfile
-        fields = ['user', 'current_company', 'current_job',
+        fields = ['user', 'nickname' 'current_company', 'logo', 'current_job',
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
@@ -64,20 +59,18 @@ class ConnectionsSerializer(serializers.ModelSerializer):
 
 class MentorSerializer(serializers.ModelSerializer):
     Certificate = CertificateSerializer(many=True, read_only=True)
-    Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
     AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
     WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
-  #  mentor_profile_user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='user.id')
-  #  mentor_profile_user = PersonalSerializer(source='user.id')
+
 
     class Meta:
         model = MentorProfile
         depth=1
-        fields = ['user', 'current_company', 'current_job',
-                  'work_period_from', 'work_period_to',
+        fields = ['user', 'nickname', 'current_company', 'current_job',
+                  'work_period_from', 'education',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified', 'Certificate', 'Extracurricular', 'AppliedCompanies', 'WorkExperience']
+                  'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience']
 
 
 

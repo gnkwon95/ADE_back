@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'rest_auth',
 
     'rest_framework_tracking',
+
+    'imagekit',
 ]
 
 REST_FRAMEWORK = {
@@ -101,8 +103,12 @@ ACCOUNT_EMAIL_REQUIRED = False
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'contag',
+        'USER': 'kwon',
+        'PASSWORD': 'teamade',
+        'HOST': 'localhost',
+        'PORT': '8000',
     }
 }
 
@@ -128,6 +134,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Seoul'
@@ -149,3 +159,4 @@ CORS_ORIGIN_WHITELIST = (
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
