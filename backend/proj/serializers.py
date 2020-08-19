@@ -30,7 +30,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MentorProfile
-        fields = ['user', 'nickname' 'current_company', 'logo', 'current_job',
+        fields = ['user', 'nickname', 'current_company', 'logo', 'current_job',
                   'work_period_from', 'work_period_to',
                   'PR', 'voter', 'real_name',
                   'phone_number', 'bank', 'account_num', 'account_email',
