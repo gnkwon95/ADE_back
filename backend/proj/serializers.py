@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates,  MentorProfileWorkExperience
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates,  MentorProfileWorkExperience, Logger
 
 
 
@@ -72,6 +72,10 @@ class MentorSerializer(serializers.ModelSerializer):
                   'phone_number', 'bank', 'account_num', 'account_email',
                   'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience']
 
+class LoggerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Logger
+        fields = ['user', 'user_id', 'user_uid', 'time', 'page', 'detail']
 
 
 #MentorProfileCertificates

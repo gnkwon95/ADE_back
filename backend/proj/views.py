@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
-from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, AppliedCompaniesSerializer, MentorSerializer
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileAppliedCompanies
+from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, AppliedCompaniesSerializer, MentorSerializer, LoggerSerializer
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileAppliedCompanies, Logger
 from rest_framework_tracking.mixins import LoggingMixin
 
 class MentorProfilesViewSet(LoggingMixin, viewsets.ModelViewSet):
@@ -109,3 +109,7 @@ class ProfileFullViewSet(viewsets.ModelViewSet):
         if user is not None:
             queryset = queryset.filter(user__user_uid=user)
         return queryset
+
+class LoggerViewSet(viewsets.ModelViewSet):
+    serializer_class = LoggerSerializer
+    queryset = Logger.objects.all()

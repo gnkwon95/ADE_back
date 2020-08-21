@@ -101,3 +101,11 @@ class Connections(models.Model):
 
     def __str__(self):
         return str(self.mentor.user.user_id + "+" + self.mentee.user_id)
+
+class Logger(models.Model):
+    user = models.IntegerField(blank = True)
+    user_id = models.CharField(blank=True)
+    user_uid = models.CharField(blank=True)
+    time = models.DateTimeField(default=timezone.now)
+    page = models.CharField()
+    detail = models.CharField()

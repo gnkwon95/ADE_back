@@ -19,6 +19,7 @@ router.register(r'certificates', views.CertificateViewSet, basename='profile-cer
 router.register(r'workexperience', views.WorkExperienceViewSet, basename='profile-workexperience')
 router.register(r'appliedcompanies', views.AppliedCompaniesViewSet, basename='profile-appliedcompanies')
 router.register(r'profile_full', views.ProfileFullViewSet, basename='profile-full')
+router.register(r'log', views.LoggerViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls))
