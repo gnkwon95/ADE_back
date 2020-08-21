@@ -104,8 +104,8 @@ class Connections(models.Model):
 
 class Logger(models.Model):
     user = models.IntegerField(blank = True)
-    user_id = models.CharField(blank=True)
-    user_uid = models.CharField(blank=True)
+    user_id = models.CharField(blank=True, max_length=20)
+    user_uid = models.CharField(blank=True, max_length=50)
     time = models.DateTimeField(default=timezone.now)
-    page = models.CharField()
-    detail = models.CharField()
+    page = models.CharField(max_length=20)
+    detail = models.CharField(max_length=20)
