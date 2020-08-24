@@ -29,12 +29,18 @@ class AppliedCompaniesSerializer(serializers.ModelSerializer):
         model = MentorProfileAppliedCompanies
         fields = ['company']
 
+class NicknameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Nickname
+        fields = ['nickname']
+
 class MentorProfileSerializer(serializers.ModelSerializer):
     Profile= PersonalSerializer(many=True, read_only=True)
+    Nickname = NicknameSerializer()
 
     class Meta:
         model = MentorProfile
-        fields = ['user', 'education_univ', 'education_major',
+        fields = ['user', 'Nickname', 'education_univ', 'education_major',
                   'education_level', 'education_status', 'current_company',
                   'logo', 'current_job', 'applied_job',
                   'work_start_year', 'work_start_month',
@@ -42,10 +48,7 @@ class MentorProfileSerializer(serializers.ModelSerializer):
                   'bank', 'account_num', 'account_email',
                   'create_date', 'date_modified', 'Profile']
 
-class NicknameSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Nickname
-        fields = ['nickname']
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
