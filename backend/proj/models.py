@@ -17,16 +17,24 @@ class User(models.Model):
 def logo_image_path(instance, filename):
     return f'posts/{instance.content}/{instance.content}.jpg'
 
+
+
 class MentorProfile(models.Model):
     # mentor profile
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mentor_profile_user')
-    nickname = models.CharField(max_length=20)
-    education = models.CharField(max_length=20)
+    #nickname = models.CharField(max_length=20)
+
+    # education
+    education_univ = models.CharField(max_length=20)
+    education_major = models.CharField(max_length=20)
+    education_level = models.CharField(max_length=20)
+    education_status = models.CharField(max_length=20)
 
 
     #company
     current_company = models.CharField(max_length=20)
     logo = models.ImageField(upload_to='logo/', blank=True)
+    applied_job = models.CharField(max_length=20)
     current_job = models.CharField(max_length=20)
     work_start_year = models.IntegerField()
     work_start_month = models.IntegerField()
@@ -39,8 +47,7 @@ class MentorProfile(models.Model):
     voter = models.ManyToManyField(User, related_name='voter_profile', blank=True)
 
     #account
-    real_name = models.CharField(max_length=20)
-    phone_number = models.BigIntegerField()
+    card_user_name = models.CharField(max_length=20)
     bank = models.CharField(max_length=20, default='') #아마 툴로 따로 처리할듯
     account_num = models.BigIntegerField() #이것도 아마 툴로 따로 처리할듯
     account_email = models.CharField(max_length=20, default='') # 디폴트를 로그인때 받은 값으로 전달받아야함... 어떻게?
@@ -55,6 +62,10 @@ class MentorProfile(models.Model):
     def __str__(self):
         return str(self.user.user_id)
 
+class Nickname(models.Model):
+    profile = models.ForeignKey(MentorProfile, related_name='Nickname', on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=20)
+
 #어학 시험 점수
 class MentorProfileCertificates(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='Certificates', on_delete=models.CASCADE)
@@ -63,6 +74,7 @@ class MentorProfileCertificates(models.Model):
     def __str__(self):
         return str(self.profile.user_id)
 
+#업무경험
 class MentorProfileWorkExperience(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='WorkExperience', on_delete=models.CASCADE)
     company = models.CharField(max_length=20)
@@ -74,13 +86,20 @@ class MentorProfileWorkExperience(models.Model):
     def __str__(self):
         return str(self.profile.user_id)
 
+#대외활동
 class MentorProfileExtracurricular(models.Model):
-    profile = models.ForeignKey(MentorProfile, related_name='AppliedCompanies', on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='Extracurricular', on_delete=models.CASCADE)
     extracurricular = models.CharField(max_length=30)
 
     def __str__(self):
         return str(self.profile.user_id)
 
+class MentorProfileAppliedCompanies(models.Model):
+    profile = models.ForeignKey(MentorProfile, related_name='Extracurricular', on_delete=models.CASCADE)
+    company = models.CharField(max_length=30)
+
+    def __str__(self):
+        return str(self.profile.user_id)
 
 class Comment(models.Model):
     profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE) #개인 정보 가져오기

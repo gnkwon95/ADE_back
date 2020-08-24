@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileExtracurricular, MentorProfileCertificates,  MentorProfileWorkExperience, Logger
+from .models import MentorProfile, User, Comment, Score, Connections, Nickname, MentorProfileExtracurricular, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileAppliedCompanies, Logger
 
 
 
@@ -24,18 +24,28 @@ class ExtracurricularSerializer(serializers.ModelSerializer):
         model = MentorProfileExtracurricular
         fields = ['extracurricular']
 
+class AppliedCompaniesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MentorProfileAppliedCompanies
+        fields = ['company']
+
 class MentorProfileSerializer(serializers.ModelSerializer):
     Profile= PersonalSerializer(many=True, read_only=True)
 
-
     class Meta:
         model = MentorProfile
-        fields = ['user', 'nickname', 'current_company', 'logo', 'current_job',
-                  'work_period_from', 'work_period_to',
-                  'PR', 'voter', 'real_name',
-                  'phone_number', 'bank', 'account_num', 'account_email',
+        fields = ['user', 'education_univ', 'education_major',
+                  'education_level', 'education_status', 'current_company',
+                  'logo', 'current_job', 'applied_job',
+                  'work_start_year', 'work_start_month',
+                  'PR', 'intro', 'voter', 'card_user_name',
+                  'bank', 'account_num', 'account_email',
                   'create_date', 'date_modified', 'Profile']
 
+class NicknameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Nickname
+        fields = ['nickname']
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -61,16 +71,21 @@ class MentorSerializer(serializers.ModelSerializer):
     Certificate = CertificateSerializer(many=True, read_only=True)
     AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
     WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
+    Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
+    Nickname = NicknameSerializer(read_only=True)
 
 
     class Meta:
         model = MentorProfile
         depth=1
-        fields = ['user', 'nickname', 'current_company', 'current_job',
-                  'work_period_from', 'education',
-                  'PR', 'voter', 'real_name',
-                  'phone_number', 'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience']
+        fields = ['user', 'Nickname', 'education_univ', 'education_major',
+                  'education_level', 'education_status', 'current_company',
+                  'logo', 'current_job', 'applied_job',
+                   'work_start_year', 'work_start_month',
+                  'PR', 'intro', 'voter', 'card_user_name',
+                  'bank', 'account_num', 'account_email',
+                  'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience', 'Extracurricular']
+
 
 class LoggerSerializer(serializers.ModelSerializer):
     class Meta:

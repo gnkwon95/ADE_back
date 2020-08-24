@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
-from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, MentorSerializer, LoggerSerializer
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileExtracurricular, Logger
+from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, NicknameSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, AppliedCompaniesSerializer, MentorSerializer, LoggerSerializer
+from .models import MentorProfile, User, Comment, Score, Connections, Nickname, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileExtracurricular, MentorProfileAppliedCompanies, Logger
 from rest_framework_tracking.mixins import LoggingMixin
 
 class MentorProfilesViewSet(LoggingMixin, viewsets.ModelViewSet):
@@ -28,6 +28,17 @@ class CommentViewSet(LoggingMixin, viewsets.ModelViewSet):
         if profile is not None:
             queryset = queryset.filter(profile = profile)
         return queryset
+
+class NicknameViewSet(viewsets.ModelViewSet):
+    serializer_class = NicknameSerializer
+
+    def get_queryset(self):
+        queryset = Nickname.objects.all()
+        nickname = self.request.query_params.get('nickname', None)
+        if nickname is not None:
+            queryset = queryset.filter(nickname = nickname)
+        return queryset
+    # nickname으로 검색해서 결과값이 null이 나오면 사용 가능
 
 class ScoreViewSet(LoggingMixin, viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
@@ -59,9 +70,11 @@ class ConnectionsViewSet(LoggingMixin, viewsets.ModelViewSet):
             return queryset1 | queryset2
         return queryset
 
-
-
 # Mentor Profile related
+class AppliedCompaniesViewSet(viewsets.ModelViewSet):
+    serializer_class = AppliedCompaniesSerializer
+    queryset = MentorProfileAppliedCompanies.objects.all()
+
 class CertificateViewSet(viewsets.ModelViewSet):
     serializer_class = CertificateSerializer
 #

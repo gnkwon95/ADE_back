@@ -21,6 +21,9 @@ router.register(r'appliedcompanies', views.ExtracurricularViewSet, basename='pro
 router.register(r'profile_full', views.ProfileFullViewSet, basename='profile-full')
 router.register(r'log', views.LoggerViewSet)
 
+#check results
+router.register(r'nickname', views.NicknameViewSet, basename='nickname')
+
 urlpatterns = [
     url(r'^', include(router.urls))
 ]
