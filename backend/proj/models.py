@@ -123,9 +123,9 @@ class Connections(models.Model):
         return str(self.mentor.user.user_id + "+" + self.mentee.user_id)
 
 class Logger(models.Model):
-    user = models.IntegerField(blank = True)
-    user_id = models.CharField(blank=True, max_length=20)
-    user_uid = models.CharField(blank=True, max_length=50)
+    user = models.IntegerField(null=True, lank = True)
+    user_id = models.CharField(null=True, blank=True, max_length=20)
+    user_uid = models.CharField(null=True, blank=True, max_length=50)
     time = models.DateTimeField(default=timezone.now)
     page = models.CharField(max_length=20)
     detail = models.CharField(max_length=20)
