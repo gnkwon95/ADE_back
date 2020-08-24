@@ -72,7 +72,7 @@ class MentorProfileCertificates(models.Model):
     certificate = models.CharField(max_length=20)
 
     def __str__(self):
-        return str(self.profile.user_id)
+        return str(self.profile.user.user_id)
 
 #업무경험
 class MentorProfileWorkExperience(models.Model):
@@ -84,7 +84,7 @@ class MentorProfileWorkExperience(models.Model):
     work_to_month = models.IntegerField()
 
     def __str__(self):
-        return str(self.profile.user_id)
+        return str(self.profile.user.user_id)
 
 #대외활동
 class MentorProfileExtracurricular(models.Model):
@@ -92,14 +92,14 @@ class MentorProfileExtracurricular(models.Model):
     extracurricular = models.CharField(max_length=30)
 
     def __str__(self):
-        return str(self.profile.user_id)
+        return str(self.profile.user.user_id)
 
 class MentorProfileAppliedCompanies(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='AppliedCompanies', on_delete=models.CASCADE)
     company = models.CharField(max_length=30)
 
     def __str__(self):
-        return str(self.profile.user_id)
+        return str(self.profile.user.user_id)
 
 class Comment(models.Model):
     profile = models.ForeignKey(MentorProfile, on_delete=models.CASCADE) #개인 정보 가져오기
