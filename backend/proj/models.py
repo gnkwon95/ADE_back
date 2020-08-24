@@ -22,7 +22,7 @@ def logo_image_path(instance, filename):
 class MentorProfile(models.Model):
     # mentor profile
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mentor_profile_user')
-    #nickname = models.CharField(max_length=20)
+    nickname = models.CharField(max_length=20)
 
     # education
     education_univ = models.CharField(max_length=20)
@@ -61,10 +61,6 @@ class MentorProfile(models.Model):
 
     def __str__(self):
         return str(self.user.user_id)
-
-class Nickname(models.Model):
-    profile = models.ForeignKey(MentorProfile, related_name='Nickname', on_delete=models.CASCADE)
-    nickname = models.CharField(max_length=20)
 
 #어학 시험 점수
 class MentorProfileCertificates(models.Model):

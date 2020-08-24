@@ -15,7 +15,6 @@ admin.site.register(User, PersonalProfileAdmin)
 admin.site.register(Score)
 admin.site.register(Connections)
 
-admin.site.register(Nickname)
 admin.site.register(MentorProfileWorkExperience)
 admin.site.register(MentorProfileCertificates)
 admin.site.register(MentorProfileExtracurricular)
