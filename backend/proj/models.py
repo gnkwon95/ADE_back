@@ -28,11 +28,12 @@ class MentorProfile(models.Model):
     current_company = models.CharField(max_length=20)
     logo = models.ImageField(upload_to='logo/', blank=True)
     current_job = models.CharField(max_length=20)
-    work_period_from = models.DateField()
-    work_period_to = models.DateField()
+    work_start_year = models.IntegerField()
+    work_start_month = models.IntegerField()
 
     # self introduction
-    PR = models.TextField()
+    PR = models.TextField(default="드리는 말", blank=True) # 드리는 말
+    intro = models.TextField(default = "자기소개", blank=True) # 한 마디 소개
 
     #votes
     voter = models.ManyToManyField(User, related_name='voter_profile', blank=True)
@@ -54,6 +55,7 @@ class MentorProfile(models.Model):
     def __str__(self):
         return str(self.user.user_id)
 
+#어학 시험 점수
 class MentorProfileCertificates(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='Certificates', on_delete=models.CASCADE)
     certificate = models.CharField(max_length=20)
@@ -63,15 +65,18 @@ class MentorProfileCertificates(models.Model):
 
 class MentorProfileWorkExperience(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='WorkExperience', on_delete=models.CASCADE)
-    workexperience = models.CharField(max_length=20)
+    company = models.CharField(max_length=20)
+    work_from_year = models.IntegerField()
+    work_from_month = models.IntegerFIeld()
+    work_to_year = models.IntegerField()
+    work_to_month = models.IntegerField()
 
     def __str__(self):
         return str(self.profile.user_id)
 
-class MentorProfileAppliedCompanies(models.Model):
+class MentorProfileExtracurricular(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='AppliedCompanies', on_delete=models.CASCADE)
-    appliedcompany = models.CharField(max_length=20)
-    appliedcompanystage = models.CharField(max_length=20, default='최종합')
+    extracurricular = models.CharField(max_length=30)
 
     def __str__(self):
         return str(self.profile.user_id)

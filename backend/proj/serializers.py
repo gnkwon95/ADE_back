@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileAppliedCompanies, MentorProfileCertificates,  MentorProfileWorkExperience, Logger
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileExtracurricular, MentorProfileCertificates,  MentorProfileWorkExperience, Logger
 
 
 
@@ -17,12 +17,12 @@ class CertificateSerializer(serializers.ModelSerializer):
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileWorkExperience
-        fields = [ 'workexperience']
+        fields = [ 'company', 'work_from_year', 'work_from_month', 'work_to_year', 'work_to_month']
 
-class AppliedCompaniesSerializer(serializers.ModelSerializer):
+class ExtracurricularSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MentorProfileAppliedCompanies
-        fields = ['appliedcompany', 'appliedcompanystage']
+        model = MentorProfileExtracurricular
+        fields = ['extracurricular']
 
 class MentorProfileSerializer(serializers.ModelSerializer):
     Profile= PersonalSerializer(many=True, read_only=True)

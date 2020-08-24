@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets          # add this
-from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, AppliedCompaniesSerializer, MentorSerializer, LoggerSerializer
-from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileAppliedCompanies, Logger
+from .serializers import MentorProfileSerializer, PersonalSerializer, CommentSerializer, ScoreSerializer, ConnectionsSerializer, WorkExperienceSerializer, CertificateSerializer, ExtracurricularSerializer, MentorSerializer, LoggerSerializer
+from .models import MentorProfile, User, Comment, Score, Connections, MentorProfileCertificates,  MentorProfileWorkExperience, MentorProfileExtracurricular, Logger
 from rest_framework_tracking.mixins import LoggingMixin
 
 class MentorProfilesViewSet(LoggingMixin, viewsets.ModelViewSet):
@@ -89,12 +89,12 @@ class WorkExperienceViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(profile=mentor)
         return queryset
 
-class AppliedCompaniesViewSet(viewsets.ModelViewSet):
-    serializer_class = AppliedCompaniesSerializer
-    queryset = MentorProfileAppliedCompanies.objects.all()
+class ExtracurricularViewSet(viewsets.ModelViewSet):
+    serializer_class = ExtracurricularSerializer
+    queryset = MentorProfileExtracurricular.objects.all()
 
     def get_queryset(self):
-        queryset = MentorProfileAppliedCompanies.objects.all()
+        queryset = MentorProfileExtracurricular.objects.all()
         mentor = self.request.query_params.get('mentor', None)
         if mentor is not None:
             queryset = queryset.filter(profile=mentor)
