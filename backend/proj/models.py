@@ -79,7 +79,7 @@ class MentorProfileWorkExperience(models.Model):
     profile = models.ForeignKey(MentorProfile, related_name='WorkExperience', on_delete=models.CASCADE)
     company = models.CharField(max_length=20)
     work_from_year = models.IntegerField()
-    work_from_month = models.IntegerFIeld()
+    work_from_month = models.IntegerField()
     work_to_year = models.IntegerField()
     work_to_month = models.IntegerField()
 
@@ -95,7 +95,7 @@ class MentorProfileExtracurricular(models.Model):
         return str(self.profile.user_id)
 
 class MentorProfileAppliedCompanies(models.Model):
-    profile = models.ForeignKey(MentorProfile, related_name='Extracurricular', on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='AppliedCompanies', on_delete=models.CASCADE)
     company = models.CharField(max_length=30)
 
     def __str__(self):
