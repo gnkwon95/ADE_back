@@ -64,7 +64,7 @@ class MentorProfile(models.Model):
 
 #어학 시험 점수
 class MentorProfileCertificates(models.Model):
-    profile = models.ForeignKey(MentorProfile, related_name='Certificates', on_delete=models.CASCADE)
+    profile = models.ForeignKey(MentorProfile, related_name='Certificate', on_delete=models.CASCADE)
     certificate = models.CharField(max_length=20)
 
     def __str__(self):

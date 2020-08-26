@@ -66,9 +66,9 @@ class ConnectionsSerializer(serializers.ModelSerializer):
 
 class MentorSerializer(serializers.ModelSerializer):
     Certificate = CertificateSerializer(many=True, read_only=True)
-    #AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
-    #WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
-    #Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
+    AppliedCompanies = AppliedCompaniesSerializer(many=True, read_only=True)
+    WorkExperience = WorkExperienceSerializer(many=True, read_only=True)
+    Extracurricular = ExtracurricularSerializer(many=True, read_only=True)
 
 
     class Meta:
@@ -80,7 +80,7 @@ class MentorSerializer(serializers.ModelSerializer):
                    'work_start_year', 'work_start_month',
                   'PR', 'intro', 'voter', 'card_user_name',
                   'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified', 'Certificate']
+                  'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience', 'Extracurricular']
 
 
 class LoggerSerializer(serializers.ModelSerializer):
