@@ -12,22 +12,22 @@ class PersonalSerializer(serializers.ModelSerializer):
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileCertificates
-        fields = ['certificate']
+        fields = ['profile', 'certificate']
 
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileWorkExperience
-        fields = [ 'company', 'work_from_year', 'work_from_month', 'work_to_year', 'work_to_month']
+        fields = ['profile', 'company', 'work_from_year', 'work_from_month', 'work_to_year', 'work_to_month']
 
 class ExtracurricularSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileExtracurricular
-        fields = ['extracurricular']
+        fields = ['profile', 'extracurricular']
 
 class AppliedCompaniesSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentorProfileAppliedCompanies
-        fields = ['company']
+        fields = ['profile', 'company']
 
 class MentorProfileSerializer(serializers.ModelSerializer):
     Profile= PersonalSerializer(many=True, read_only=True)
