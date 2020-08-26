@@ -80,7 +80,7 @@ class MentorSerializer(serializers.ModelSerializer):
                    'work_start_year', 'work_start_month',
                   'PR', 'intro', 'voter', 'card_user_name',
                   'bank', 'account_num', 'account_email',
-                  'create_date', 'date_modified', 'AppliedCompanies', 'WorkExperience', 'Extracurricular']
+                  'create_date', 'date_modified', 'Certificate', 'AppliedCompanies', 'WorkExperience', 'Extracurricular']
 
 
 class LoggerSerializer(serializers.ModelSerializer):
