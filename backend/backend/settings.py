@@ -155,6 +155,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'https://15.164.251.155:3000',
     'http://15.164.251.155:3000',
+    'django',
 )
 
 # Static files (CSS, JavaScript, Images)
