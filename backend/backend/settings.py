@@ -154,6 +154,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     '15.164.251.155:3000',
+    'http://15.164.251.155:3000',
 )
 
 # Static files (CSS, JavaScript, Images)
